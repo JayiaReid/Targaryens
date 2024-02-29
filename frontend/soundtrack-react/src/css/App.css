@@ -1,0 +1,22 @@
+body{
+  margin: 0;
+  /* background-color: #212121; */
+  color: #eee;
+  font-family:serif;
+  overflow:hidden;
+  overflow-y: auto;
+}
+body::-webkit-scrollbar{
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+

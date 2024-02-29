@@ -1,0 +1,27 @@
+/* review page */
+
+.All_Reviews{
+    padding-top: 5%;
+    background-color: #000;
+  }
+  .userReviews {
+    color: rgb(255, 255, 255);
+    background-color: #000000; 
+    padding: 20px;
+    font-size: 2em;
+  }
+  
+  
+  .userReviews h3 {
+    color: #ff0000; 
+    margin-bottom: 10px; 
+    text-shadow: #ff0000 1px 2px 5px;
+  }
+  
+  
+  .u_Reviews {
+    border-left: #ff0000 3px solid;
+    margin-bottom: 10px; /* Add space between reviews */
+    padding-left: 2em;
+    animation: border-appear 1.5s forwards;
+  }

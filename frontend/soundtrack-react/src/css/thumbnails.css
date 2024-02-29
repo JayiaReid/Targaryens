@@ -1,0 +1,134 @@
+/* submit a review page */
+#submitpage {
+  margin: 0;
+  background-color: #212121;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #eee;
+  overflow-y: hidden;
+  height: 100%;
+  max-height: 100%;
+}
+
+/* main content */
+.soundtracks {
+  font-size: 12px;
+  width: 50vw;
+  height: 110vh;
+  margin-top: -50px;
+  position: relative;
+  animation: fade-in 1s ease;
+}
+
+.s_img {
+  width: 1700px;
+  height: auto;
+  object-fit: cover;
+  z-index: -1;
+  position: fixed;
+  animation: fade-in 1s ease;
+}
+
+/* animations and thumbnails */
+
+.thumbnail {
+  position: fixed;
+  top: 10%; 
+  left: calc(50% + 500px); 
+  width: 200px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  cursor: pointer;
+  overflow-y: auto; 
+  max-height: 88vh; 
+  align-items: center;
+  border-left: solid red 5px;
+  animation: border-appear2 1s forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+  padding-top: 10px;
+}
+
+.thumbnail::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes border-appear2 {
+  from {
+      border-left-color: transparent; 
+      padding-left: 0; 
+      opacity: 0;
+      transform: translateX(-10px);
+  }
+  to {
+      border-left-color: red; 
+      padding-left: 1.5em;
+      opacity: 1;
+  }
+}
+
+.t_item {
+  width: 150px;
+  height: 220px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.t_item img {
+  width: 150px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 5%;
+  object-position: center; 
+}
+
+.t_content {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+}
+
+.t_title {
+  font-weight: bolder;
+}
+
+.arrows {
+  position: absolute;
+  top: 90%;
+  left: 5%;
+  width: 300px;
+  max-width: 30%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.arrows button {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px red solid;
+  background-color: #eeeeee00;
+  font-size: 20px;
+  transition: 0.5s;
+  align-items: center;
+  padding-bottom: 4.5px;
+  color: black;
+  text-shadow: 1px 1px 2px black;
+  z-index: 102;
+}
+
+.arrows button:hover {
+  background-color: red;
+  color: black;
+  text-shadow: none;
+}
+
+.activeT {
+  transform: translateY(-20px);
+  transition: 0.5s;
+  transform: scale(1.1);
+}
