@@ -28,17 +28,14 @@ app.post('/api/insert', (req, res)=>{
 
   const songName=req.body.songName;
   const songReview=req.body.songReview;
-  const songRating=req.body.songRating;
 
-  const sqlInsert = "INSERT INTO soundtrackreviews (songName, songReview, songRating) VALUES (?,?,?);"
-  db.query(sqlInsert,[songName, songReview, songRating], (err, result) => {
+  const sqlInsert = "INSERT INTO soundtrackreviews (songName, songReview) VALUES (?,?);"
+  db.query(sqlInsert, [songName, songReview], (err, result) => {
     if (err) {
       console.log('Error:', err);
       res.send('An error occurred.');
     } else {
       console.log('Insertion successful');
-      res.send('soundtrack');
-      console.log(result);
     }
   });
 })

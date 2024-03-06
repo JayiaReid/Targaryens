@@ -1,5 +1,15 @@
 /* home page */
-
+.btns{
+  display: inline;
+}
+#h_intro button{
+  padding: 1em;
+  background-color: black;
+  border: 1px solid red;
+  color: red;
+  margin-left: 50%;
+  cursor: pointer;
+}
 #h_intro img{
     animation: fade-in 1s  ease-in-out;
     height: 100vh;

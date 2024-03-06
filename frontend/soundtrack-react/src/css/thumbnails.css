@@ -1,5 +1,5 @@
-/* submit a review page */
-#submitpage {
+/*list page */
+#listpage {
   margin: 0;
   background-color: #212121;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -28,6 +28,18 @@
   animation: fade-in 1s ease;
 }
 
+#t_tile{
+  background-color: transparent;
+  position: absolute;
+  justify-content: center;
+  text-align: center;
+  margin-left: 10%;
+  margin-top: 20%;
+  font-size: 5em;
+  border-left: 6px solid red;
+  animation: 3s border-appear ease forwards;
+  text-shadow: #212121 2px 2px 8px;
+}
 /* animations and thumbnails */
 
 .thumbnail {
@@ -43,10 +55,10 @@
   overflow-y: auto; 
   max-height: 88vh; 
   align-items: center;
-  border-left: solid red 5px;
-  animation: border-appear2 1s forwards;
-  animation-delay: 0.5s;
-  opacity: 0;
+  animation: fade-in 1s ease;
+  /* border-left: solid red 5px; */
+  /* animation: border-appear2 1s forwards; */
+  opacity: 1;
   padding-top: 10px;
 }
 
@@ -54,19 +66,19 @@
   display: none;
 }
 
-@keyframes border-appear2 {
+/* @keyframes border-appear2 {
   from {
       border-left-color: transparent; 
       padding-left: 0; 
       opacity: 0;
-      transform: translateX(-10px);
+      transform: translateX(-30px);
   }
   to {
       border-left-color: red; 
       padding-left: 1.5em;
       opacity: 1;
   }
-}
+} */
 
 .t_item {
   width: 150px;
@@ -111,7 +123,7 @@
   cursor: pointer;
   border-radius: 50%;
   border: 2px red solid;
-  background-color: #eeeeee00;
+  background-color: red;
   font-size: 20px;
   transition: 0.5s;
   align-items: center;
@@ -119,6 +131,21 @@
   color: black;
   text-shadow: 1px 1px 2px black;
   z-index: 102;
+}
+
+.arrows button img{
+  width: 20px;
+  text-shadow: 1px 1px 2px black;
+  cursor: pointer;
+  font-size: 20px;
+  text-shadow: 1px 1px 2px black;
+  z-index: 102;
+  padding-top: 10px;
+  transition: 0.5s;
+}
+
+.arrows button img:hover{
+  transform: scale(1.1);
 }
 
 .arrows button:hover {
@@ -131,4 +158,8 @@
   transform: translateY(-20px);
   transition: 0.5s;
   transform: scale(1.1);
+}
+
+audio{
+ /* display: none; */
 }

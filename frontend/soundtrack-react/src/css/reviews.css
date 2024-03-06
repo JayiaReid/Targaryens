@@ -1,16 +1,41 @@
 /* review page */
+/* #review_Page{
+  background-image: url('../assets/hotdg.jpg');
+  background-repeat: no-repeat;
+  background-position: fixed;
+  background-size: cover;
+} */
 
 .All_Reviews{
     padding-top: 5%;
-    background-color: #000;
+    /* background-color: #000; */
+    background-color: rgba(0, 0, 0, 0.553);
+    
+  }
+  .All_Reviews h1{
+    text-align: center;
+    font-size: 4em;
+    /* font-style: italic; */
+    font-weight: bolder;
+    color: rgba(255, 0, 0, 0.742);
+    text-shadow: 2px 2px 10px black;
   }
   .userReviews {
     color: rgb(255, 255, 255);
-    background-color: #000000; 
+    /* background-color: rgba(0, 0, 0, 0.304);  */
     padding: 20px;
     font-size: 2em;
+    margin-left: 3%;
   }
   
+  .r_img{
+    width: 1600px;
+    height: auto;
+    object-fit: cover;
+    z-index: -1;
+    position: fixed;
+    animation: fade-in 1s ease;
+  }
   
   .userReviews h3 {
     color: #ff0000; 

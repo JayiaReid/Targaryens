@@ -16,7 +16,7 @@ export default function S_reviews(props) {
       {reviewList.map((val, index) => (
         val.songName === props.title ? (
           <p key={index} className='u_Reviews'>
-           Review: {val.songReview} | Rating: {val.songRating}
+           {val.songReview}
           </p>
         ) : null
       ))}
