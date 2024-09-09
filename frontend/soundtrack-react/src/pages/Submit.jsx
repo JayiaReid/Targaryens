@@ -9,7 +9,7 @@ function Submit() {
     // const [songRating, setSongRating] = useState(0);
 
     const submitReview = () => {
-        console.log("Sending POST request with data:", { songName, songReview }); // Add this line to log the data being sent
+        console.log("Sending POST request with data:", { songName, songReview });
         axios.post('http://localhost:5178/api/insert', {
             songName: songName, 
             songReview: songReview,  
@@ -18,7 +18,7 @@ function Submit() {
             setSongName('');
             setSongReview('');
         }).catch(error => {
-            console.error("Error submitting review:", error); // Add this line to log any errors
+            console.error("Error submitting review:", error); 
         });
     };
     

@@ -1,15 +1,8 @@
 const express = require("express");
 const app = express();
-const mysql = require("mysql2");
+const fs = require('fs')
 const bodyParser = require('body-parser');
 const cors = require('cors');
-
-const db = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: 'mochalatte',
-  database: 'soundtrack-database'
-});
 
 //middleware
 app.use(bodyParser.urlencoded({extended: true}));
@@ -18,26 +11,38 @@ app.use(cors());
  
 
 app.get("/api/get", (req, res) => {
-    const sqlSelect = "SELECT * from soundtrackreviews;"
-    db.query(sqlSelect, (err, result)=>{
-      res.send(result);
-    })
+
+  fs.readFile("reviews.json", "utf8", (err, data)=>{
+    if (err) throw err;
+    res.send(data);
+  })
 });
 
 app.post('/api/insert', (req, res)=>{
 
-  const songName=req.body.songName;
-  const songReview=req.body.songReview;
+  fs.readFile("reviews.json", "utf8", (err, data)=>{
+    if (err) throw err;
 
-  const sqlInsert = "INSERT INTO soundtrackreviews (songName, songReview) VALUES (?,?);"
-  db.query(sqlInsert, [songName, songReview], (err, result) => {
-    if (err) {
-      console.log('Error:', err);
-      res.send('An error occurred.');
-    } else {
-      console.log('Insertion successful');
+    const json = JSON.parse(data)
+
+    const songName=req.body.songName;
+    const songReview=req.body.songReview;
+
+    const review = {
+      songName: songName,
+      songReview: songReview
     }
-  });
+
+    json.push(review)
+
+    const update = JSON.stringify(json)
+
+    fs.writeFile("reviews.json", update, (err)=>{
+        if (err) throw err
+        console.log(json)
+    })
+
+  })
 })
 
 
